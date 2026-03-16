@@ -57,7 +57,10 @@
 		4DACAE6F2F67AFCD004747A9 /* mouse.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE0A2F67AFCD004747A9 /* mouse.c */; };
 		4DACAE702F67AFCD004747A9 /* pcxload.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE1F2F67AFCD004747A9 /* pcxload.c */; };
 		4DACAEB42F67C000004747A9 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACAEB22F67C000004747A9 /* libSDL2.a */; };
-		4DACAEB52F67C000004747A9 /* libSDL2_net.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACAEB32F67C000004747A9 /* libSDL2_net.a */; };
+		4DACAF012F68C000004747A9 /* SDLnet.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAF052F68C000004747A9 /* SDLnet.c */; };
+		4DACAF022F68C000004747A9 /* SDLnetTCP.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAF062F68C000004747A9 /* SDLnetTCP.c */; };
+		4DACAF032F68C000004747A9 /* SDLnetUDP.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAF072F68C000004747A9 /* SDLnetUDP.c */; };
+		4DACAF042F68C000004747A9 /* SDLnetselect.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAF082F68C000004747A9 /* SDLnetselect.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,26 +71,12 @@
 			remoteGlobalIDString = A7D88E5423E24D3B00DCD162;
 			remoteInfo = libSDL2.a;
 		};
-		4DACAEB12F67C000004747A9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4D6EEDCC2EB947A000862BF3 /* SDL_net.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BE48FF6F07AFA9A900BB41DA;
-			remoteInfo = libSDL2_net.a;
-		};
 		4DACAEB82F67C000004747A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = A7D88D1723E24D3B00DCD162;
 			remoteInfo = "Static Library-iOS";
-		};
-		4DACAEB92F67C000004747A9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4D6EEDCC2EB947A000862BF3 /* SDL_net.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BE48FF6507AFA9A800BB41DA;
-			remoteInfo = "Static Library";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -107,7 +96,10 @@
 /* Begin PBXFileReference section */
 		4D6EED882EB9452400862BF3 /* OpenTyrian2000-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenTyrian2000-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../SDL/SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = SOURCE_ROOT; };
-		4D6EEDCC2EB947A000862BF3 /* SDL_net.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_net.xcodeproj; path = ../SDL/SDL_net/Xcode/SDL_net.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4DACAF052F68C000004747A9 /* SDLnet.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = SDLnet.c; path = ../SDL/SDL_net/SDLnet.c; sourceTree = SOURCE_ROOT; };
+		4DACAF062F68C000004747A9 /* SDLnetTCP.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = SDLnetTCP.c; path = ../SDL/SDL_net/SDLnetTCP.c; sourceTree = SOURCE_ROOT; };
+		4DACAF072F68C000004747A9 /* SDLnetUDP.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = SDLnetUDP.c; path = ../SDL/SDL_net/SDLnetUDP.c; sourceTree = SOURCE_ROOT; };
+		4DACAF082F68C000004747A9 /* SDLnetselect.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = SDLnetselect.c; path = ../SDL/SDL_net/SDLnetselect.c; sourceTree = SOURCE_ROOT; };
 		4DACADDD2F67AFCD004747A9 /* animlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = animlib.h; sourceTree = "<group>"; };
 		4DACADDE2F67AFCD004747A9 /* animlib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = animlib.c; sourceTree = "<group>"; };
 		4DACADDF2F67AFCD004747A9 /* arg_parse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arg_parse.h; sourceTree = "<group>"; };
@@ -214,7 +206,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DACAEB42F67C000004747A9 /* libSDL2.a in Frameworks */,
-				4DACAEB52F67C000004747A9 /* libSDL2_net.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				4DACAE3F2F67AFCD004747A9 /* src */,
-				4D6EEDCC2EB947A000862BF3 /* SDL_net.xcodeproj */,
 				4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */,
 				4D6EEDDA2EB9492D00862BF3 /* Frameworks */,
 				4D6EED892EB9452400862BF3 /* Products */,
@@ -361,14 +351,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4DACAE712F67B2DA004747A9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4DACAEB32F67C000004747A9 /* libSDL2_net.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,7 +367,6 @@
 			);
 			dependencies = (
 				4DACAEB62F67C000004747A9 /* PBXTargetDependency */,
-				4DACAEB72F67C000004747A9 /* PBXTargetDependency */,
 			);
 			name = "OpenTyrian2000-iOS";
 			packageProductDependencies = (
@@ -425,10 +406,6 @@
 					ProductGroup = 4DACAE7C2F67B2F0004747A9 /* Products */;
 					ProjectRef = 4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */;
 				},
-				{
-					ProductGroup = 4DACAE712F67B2DA004747A9 /* Products */;
-					ProjectRef = 4D6EEDCC2EB947A000862BF3 /* SDL_net.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -443,13 +420,6 @@
 			fileType = archive.ar;
 			path = libSDL2.a;
 			remoteRef = 4DACAEB02F67C000004747A9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4DACAEB32F67C000004747A9 /* libSDL2_net.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSDL2_net.a;
-			remoteRef = 4DACAEB12F67C000004747A9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -469,11 +439,6 @@
 			isa = PBXTargetDependency;
 			name = "Static Library-iOS";
 			targetProxy = 4DACAEB82F67C000004747A9 /* PBXContainerItemProxy */;
-		};
-		4DACAEB72F67C000004747A9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Static Library";
-			targetProxy = 4DACAEB92F67C000004747A9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -531,6 +496,10 @@
 				4DACAE6E2F67AFCD004747A9 /* editship.c in Sources */,
 				4DACAE6F2F67AFCD004747A9 /* mouse.c in Sources */,
 				4DACAE702F67AFCD004747A9 /* pcxload.c in Sources */,
+				4DACAF012F68C000004747A9 /* SDLnet.c in Sources */,
+				4DACAF022F68C000004747A9 /* SDLnetTCP.c in Sources */,
+				4DACAF032F68C000004747A9 /* SDLnetUDP.c in Sources */,
+				4DACAF042F68C000004747A9 /* SDLnetselect.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
