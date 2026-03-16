@@ -1,0 +1,770 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4DACAE402F67AFCD004747A9 /* palette.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE1B2F67AFCD004747A9 /* palette.c */; };
+		4DACAE412F67AFCD004747A9 /* opentyr.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE162F67AFCD004747A9 /* opentyr.c */; };
+		4DACAE422F67AFCD004747A9 /* game_menu.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADF42F67AFCD004747A9 /* game_menu.c */; };
+		4DACAE432F67AFCD004747A9 /* lvlmast.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE042F67AFCD004747A9 /* lvlmast.c */; };
+		4DACAE442F67AFCD004747A9 /* backgrnd.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADE22F67AFCD004747A9 /* backgrnd.c */; };
+		4DACAE452F67AFCD004747A9 /* varz.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE332F67AFCD004747A9 /* varz.c */; };
+		4DACAE462F67AFCD004747A9 /* starlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE2F2F67AFCD004747A9 /* starlib.c */; };
+		4DACAE472F67AFCD004747A9 /* joystick.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADF82F67AFCD004747A9 /* joystick.c */; };
+		4DACAE482F67AFCD004747A9 /* sprite.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE2D2F67AFCD004747A9 /* sprite.c */; };
+		4DACAE492F67AFCD004747A9 /* arg_parse.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADE02F67AFCD004747A9 /* arg_parse.c */; };
+		4DACAE4A2F67AFCD004747A9 /* helptext.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADF62F67AFCD004747A9 /* helptext.c */; };
+		4DACAE4B2F67AFCD004747A9 /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADE42F67AFCD004747A9 /* config.c */; };
+		4DACAE4C2F67AFCD004747A9 /* video_scale.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE3B2F67AFCD004747A9 /* video_scale.c */; };
+		4DACAE4D2F67AFCD004747A9 /* video_scale_hqNx.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE3C2F67AFCD004747A9 /* video_scale_hqNx.c */; };
+		4DACAE4E2F67AFCD004747A9 /* mtrand.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE0C2F67AFCD004747A9 /* mtrand.c */; };
+		4DACAE4F2F67AFCD004747A9 /* opl.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE192F67AFCD004747A9 /* opl.c */; };
+		4DACAE502F67AFCD004747A9 /* jukebox.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADFA2F67AFCD004747A9 /* jukebox.c */; };
+		4DACAE512F67AFCD004747A9 /* params.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE1D2F67AFCD004747A9 /* params.c */; };
+		4DACAE522F67AFCD004747A9 /* nortvars.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE142F67AFCD004747A9 /* nortvars.c */; };
+		4DACAE532F67AFCD004747A9 /* picload.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE232F67AFCD004747A9 /* picload.c */; };
+		4DACAE542F67AFCD004747A9 /* video.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE392F67AFCD004747A9 /* video.c */; };
+		4DACAE552F67AFCD004747A9 /* config_file.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADE62F67AFCD004747A9 /* config_file.c */; };
+		4DACAE562F67AFCD004747A9 /* player.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE252F67AFCD004747A9 /* player.c */; };
+		4DACAE572F67AFCD004747A9 /* tyrian2.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE312F67AFCD004747A9 /* tyrian2.c */; };
+		4DACAE582F67AFCD004747A9 /* pcxmast.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE212F67AFCD004747A9 /* pcxmast.c */; };
+		4DACAE592F67AFCD004747A9 /* sizebuf.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE292F67AFCD004747A9 /* sizebuf.c */; };
+		4DACAE5A2F67AFCD004747A9 /* lvllib.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE022F67AFCD004747A9 /* lvllib.c */; };
+		4DACAE5B2F67AFCD004747A9 /* shots.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE272F67AFCD004747A9 /* shots.c */; };
+		4DACAE5C2F67AFCD004747A9 /* episodes.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADEC2F67AFCD004747A9 /* episodes.c */; };
+		4DACAE5D2F67AFCD004747A9 /* fonthand.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADF22F67AFCD004747A9 /* fonthand.c */; };
+		4DACAE5E2F67AFCD004747A9 /* musmast.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE0E2F67AFCD004747A9 /* musmast.c */; };
+		4DACAE5F2F67AFCD004747A9 /* menus.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE082F67AFCD004747A9 /* menus.c */; };
+		4DACAE602F67AFCD004747A9 /* nortsong.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE122F67AFCD004747A9 /* nortsong.c */; };
+		4DACAE612F67AFCD004747A9 /* mainint.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE062F67AFCD004747A9 /* mainint.c */; };
+		4DACAE622F67AFCD004747A9 /* vga256d.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE372F67AFCD004747A9 /* vga256d.c */; };
+		4DACAE632F67AFCD004747A9 /* vga_palette.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE352F67AFCD004747A9 /* vga_palette.c */; };
+		4DACAE642F67AFCD004747A9 /* xmas.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE3E2F67AFCD004747A9 /* xmas.c */; };
+		4DACAE652F67AFCD004747A9 /* font.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADF02F67AFCD004747A9 /* font.c */; };
+		4DACAE662F67AFCD004747A9 /* lds_play.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADFE2F67AFCD004747A9 /* lds_play.c */; };
+		4DACAE672F67AFCD004747A9 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADEE2F67AFCD004747A9 /* file.c */; };
+		4DACAE682F67AFCD004747A9 /* animlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADDE2F67AFCD004747A9 /* animlib.c */; };
+		4DACAE692F67AFCD004747A9 /* destruct.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADE82F67AFCD004747A9 /* destruct.c */; };
+		4DACAE6A2F67AFCD004747A9 /* loudness.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE002F67AFCD004747A9 /* loudness.c */; };
+		4DACAE6B2F67AFCD004747A9 /* sndmast.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE2B2F67AFCD004747A9 /* sndmast.c */; };
+		4DACAE6C2F67AFCD004747A9 /* keyboard.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADFC2F67AFCD004747A9 /* keyboard.c */; };
+		4DACAE6D2F67AFCD004747A9 /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE102F67AFCD004747A9 /* network.c */; };
+		4DACAE6E2F67AFCD004747A9 /* editship.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADEA2F67AFCD004747A9 /* editship.c */; };
+		4DACAE6F2F67AFCD004747A9 /* mouse.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE0A2F67AFCD004747A9 /* mouse.c */; };
+		4DACAE702F67AFCD004747A9 /* pcxload.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE1F2F67AFCD004747A9 /* pcxload.c */; };
+		4DACAEB42F67C000004747A9 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACAEB22F67C000004747A9 /* libSDL2.a */; };
+		4DACAEB52F67C000004747A9 /* libSDL2_net.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACAEB32F67C000004747A9 /* libSDL2_net.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4DACAEB02F67C000004747A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7D88E5423E24D3B00DCD162;
+			remoteInfo = libSDL2.a;
+		};
+		4DACAEB12F67C000004747A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D6EEDCC2EB947A000862BF3 /* SDL_net.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE48FF6F07AFA9A900BB41DA;
+			remoteInfo = libSDL2_net.a;
+		};
+		4DACAEB82F67C000004747A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A7D88D1723E24D3B00DCD162;
+			remoteInfo = "Static Library-iOS";
+		};
+		4DACAEB92F67C000004747A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D6EEDCC2EB947A000862BF3 /* SDL_net.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BE48FF6507AFA9A800BB41DA;
+			remoteInfo = "Static Library";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4D6EEDDF2EB9495500862BF3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4D6EED882EB9452400862BF3 /* OpenTyrian2000-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenTyrian2000-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../SDL/SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4D6EEDCC2EB947A000862BF3 /* SDL_net.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_net.xcodeproj; path = ../SDL/SDL_net/Xcode/SDL_net.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4DACADDD2F67AFCD004747A9 /* animlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = animlib.h; sourceTree = "<group>"; };
+		4DACADDE2F67AFCD004747A9 /* animlib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = animlib.c; sourceTree = "<group>"; };
+		4DACADDF2F67AFCD004747A9 /* arg_parse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arg_parse.h; sourceTree = "<group>"; };
+		4DACADE02F67AFCD004747A9 /* arg_parse.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = arg_parse.c; sourceTree = "<group>"; };
+		4DACADE12F67AFCD004747A9 /* backgrnd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = backgrnd.h; sourceTree = "<group>"; };
+		4DACADE22F67AFCD004747A9 /* backgrnd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = backgrnd.c; sourceTree = "<group>"; };
+		4DACADE32F67AFCD004747A9 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		4DACADE42F67AFCD004747A9 /* config.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = config.c; sourceTree = "<group>"; };
+		4DACADE52F67AFCD004747A9 /* config_file.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config_file.h; sourceTree = "<group>"; };
+		4DACADE62F67AFCD004747A9 /* config_file.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = config_file.c; sourceTree = "<group>"; };
+		4DACADE72F67AFCD004747A9 /* destruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = destruct.h; sourceTree = "<group>"; };
+		4DACADE82F67AFCD004747A9 /* destruct.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = destruct.c; sourceTree = "<group>"; };
+		4DACADE92F67AFCD004747A9 /* editship.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = editship.h; sourceTree = "<group>"; };
+		4DACADEA2F67AFCD004747A9 /* editship.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = editship.c; sourceTree = "<group>"; };
+		4DACADEB2F67AFCD004747A9 /* episodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = episodes.h; sourceTree = "<group>"; };
+		4DACADEC2F67AFCD004747A9 /* episodes.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = episodes.c; sourceTree = "<group>"; };
+		4DACADED2F67AFCD004747A9 /* file.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
+		4DACADEE2F67AFCD004747A9 /* file.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = file.c; sourceTree = "<group>"; };
+		4DACADEF2F67AFCD004747A9 /* font.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = font.h; sourceTree = "<group>"; };
+		4DACADF02F67AFCD004747A9 /* font.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = font.c; sourceTree = "<group>"; };
+		4DACADF12F67AFCD004747A9 /* fonthand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fonthand.h; sourceTree = "<group>"; };
+		4DACADF22F67AFCD004747A9 /* fonthand.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fonthand.c; sourceTree = "<group>"; };
+		4DACADF32F67AFCD004747A9 /* game_menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game_menu.h; sourceTree = "<group>"; };
+		4DACADF42F67AFCD004747A9 /* game_menu.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = game_menu.c; sourceTree = "<group>"; };
+		4DACADF52F67AFCD004747A9 /* helptext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = helptext.h; sourceTree = "<group>"; };
+		4DACADF62F67AFCD004747A9 /* helptext.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = helptext.c; sourceTree = "<group>"; };
+		4DACADF72F67AFCD004747A9 /* joystick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = joystick.h; sourceTree = "<group>"; };
+		4DACADF82F67AFCD004747A9 /* joystick.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = joystick.c; sourceTree = "<group>"; };
+		4DACADF92F67AFCD004747A9 /* jukebox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jukebox.h; sourceTree = "<group>"; };
+		4DACADFA2F67AFCD004747A9 /* jukebox.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = jukebox.c; sourceTree = "<group>"; };
+		4DACADFB2F67AFCD004747A9 /* keyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keyboard.h; sourceTree = "<group>"; };
+		4DACADFC2F67AFCD004747A9 /* keyboard.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = keyboard.c; sourceTree = "<group>"; };
+		4DACADFD2F67AFCD004747A9 /* lds_play.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lds_play.h; sourceTree = "<group>"; };
+		4DACADFE2F67AFCD004747A9 /* lds_play.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lds_play.c; sourceTree = "<group>"; };
+		4DACADFF2F67AFCD004747A9 /* loudness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = loudness.h; sourceTree = "<group>"; };
+		4DACAE002F67AFCD004747A9 /* loudness.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = loudness.c; sourceTree = "<group>"; };
+		4DACAE012F67AFCD004747A9 /* lvllib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lvllib.h; sourceTree = "<group>"; };
+		4DACAE022F67AFCD004747A9 /* lvllib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lvllib.c; sourceTree = "<group>"; };
+		4DACAE032F67AFCD004747A9 /* lvlmast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lvlmast.h; sourceTree = "<group>"; };
+		4DACAE042F67AFCD004747A9 /* lvlmast.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lvlmast.c; sourceTree = "<group>"; };
+		4DACAE052F67AFCD004747A9 /* mainint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainint.h; sourceTree = "<group>"; };
+		4DACAE062F67AFCD004747A9 /* mainint.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mainint.c; sourceTree = "<group>"; };
+		4DACAE072F67AFCD004747A9 /* menus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = menus.h; sourceTree = "<group>"; };
+		4DACAE082F67AFCD004747A9 /* menus.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = menus.c; sourceTree = "<group>"; };
+		4DACAE092F67AFCD004747A9 /* mouse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mouse.h; sourceTree = "<group>"; };
+		4DACAE0A2F67AFCD004747A9 /* mouse.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mouse.c; sourceTree = "<group>"; };
+		4DACAE0B2F67AFCD004747A9 /* mtrand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mtrand.h; sourceTree = "<group>"; };
+		4DACAE0C2F67AFCD004747A9 /* mtrand.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mtrand.c; sourceTree = "<group>"; };
+		4DACAE0D2F67AFCD004747A9 /* musmast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = musmast.h; sourceTree = "<group>"; };
+		4DACAE0E2F67AFCD004747A9 /* musmast.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = musmast.c; sourceTree = "<group>"; };
+		4DACAE0F2F67AFCD004747A9 /* network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = network.h; sourceTree = "<group>"; };
+		4DACAE102F67AFCD004747A9 /* network.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = network.c; sourceTree = "<group>"; };
+		4DACAE112F67AFCD004747A9 /* nortsong.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nortsong.h; sourceTree = "<group>"; };
+		4DACAE122F67AFCD004747A9 /* nortsong.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = nortsong.c; sourceTree = "<group>"; };
+		4DACAE132F67AFCD004747A9 /* nortvars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nortvars.h; sourceTree = "<group>"; };
+		4DACAE142F67AFCD004747A9 /* nortvars.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = nortvars.c; sourceTree = "<group>"; };
+		4DACAE152F67AFCD004747A9 /* opentyr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opentyr.h; sourceTree = "<group>"; };
+		4DACAE162F67AFCD004747A9 /* opentyr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = opentyr.c; sourceTree = "<group>"; };
+		4DACAE172F67AFCD004747A9 /* opentyrian_version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opentyrian_version.h; sourceTree = "<group>"; };
+		4DACAE182F67AFCD004747A9 /* opl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opl.h; sourceTree = "<group>"; };
+		4DACAE192F67AFCD004747A9 /* opl.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = opl.c; sourceTree = "<group>"; };
+		4DACAE1A2F67AFCD004747A9 /* palette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = palette.h; sourceTree = "<group>"; };
+		4DACAE1B2F67AFCD004747A9 /* palette.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = palette.c; sourceTree = "<group>"; };
+		4DACAE1C2F67AFCD004747A9 /* params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = params.h; sourceTree = "<group>"; };
+		4DACAE1D2F67AFCD004747A9 /* params.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = params.c; sourceTree = "<group>"; };
+		4DACAE1E2F67AFCD004747A9 /* pcxload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pcxload.h; sourceTree = "<group>"; };
+		4DACAE1F2F67AFCD004747A9 /* pcxload.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pcxload.c; sourceTree = "<group>"; };
+		4DACAE202F67AFCD004747A9 /* pcxmast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pcxmast.h; sourceTree = "<group>"; };
+		4DACAE212F67AFCD004747A9 /* pcxmast.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pcxmast.c; sourceTree = "<group>"; };
+		4DACAE222F67AFCD004747A9 /* picload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = picload.h; sourceTree = "<group>"; };
+		4DACAE232F67AFCD004747A9 /* picload.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = picload.c; sourceTree = "<group>"; };
+		4DACAE242F67AFCD004747A9 /* player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+		4DACAE252F67AFCD004747A9 /* player.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = player.c; sourceTree = "<group>"; };
+		4DACAE262F67AFCD004747A9 /* shots.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shots.h; sourceTree = "<group>"; };
+		4DACAE272F67AFCD004747A9 /* shots.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = shots.c; sourceTree = "<group>"; };
+		4DACAE282F67AFCD004747A9 /* sizebuf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sizebuf.h; sourceTree = "<group>"; };
+		4DACAE292F67AFCD004747A9 /* sizebuf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sizebuf.c; sourceTree = "<group>"; };
+		4DACAE2A2F67AFCD004747A9 /* sndmast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sndmast.h; sourceTree = "<group>"; };
+		4DACAE2B2F67AFCD004747A9 /* sndmast.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sndmast.c; sourceTree = "<group>"; };
+		4DACAE2C2F67AFCD004747A9 /* sprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sprite.h; sourceTree = "<group>"; };
+		4DACAE2D2F67AFCD004747A9 /* sprite.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sprite.c; sourceTree = "<group>"; };
+		4DACAE2E2F67AFCD004747A9 /* starlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = starlib.h; sourceTree = "<group>"; };
+		4DACAE2F2F67AFCD004747A9 /* starlib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = starlib.c; sourceTree = "<group>"; };
+		4DACAE302F67AFCD004747A9 /* tyrian2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tyrian2.h; sourceTree = "<group>"; };
+		4DACAE312F67AFCD004747A9 /* tyrian2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tyrian2.c; sourceTree = "<group>"; };
+		4DACAE322F67AFCD004747A9 /* varz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = varz.h; sourceTree = "<group>"; };
+		4DACAE332F67AFCD004747A9 /* varz.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = varz.c; sourceTree = "<group>"; };
+		4DACAE342F67AFCD004747A9 /* vga_palette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vga_palette.h; sourceTree = "<group>"; };
+		4DACAE352F67AFCD004747A9 /* vga_palette.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vga_palette.c; sourceTree = "<group>"; };
+		4DACAE362F67AFCD004747A9 /* vga256d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vga256d.h; sourceTree = "<group>"; };
+		4DACAE372F67AFCD004747A9 /* vga256d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vga256d.c; sourceTree = "<group>"; };
+		4DACAE382F67AFCD004747A9 /* video.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = video.h; sourceTree = "<group>"; };
+		4DACAE392F67AFCD004747A9 /* video.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = video.c; sourceTree = "<group>"; };
+		4DACAE3A2F67AFCD004747A9 /* video_scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = video_scale.h; sourceTree = "<group>"; };
+		4DACAE3B2F67AFCD004747A9 /* video_scale.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = video_scale.c; sourceTree = "<group>"; };
+		4DACAE3C2F67AFCD004747A9 /* video_scale_hqNx.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = video_scale_hqNx.c; sourceTree = "<group>"; };
+		4DACAE3D2F67AFCD004747A9 /* xmas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xmas.h; sourceTree = "<group>"; };
+		4DACAE3E2F67AFCD004747A9 /* xmas.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xmas.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D6EED852EB9452400862BF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DACAEB42F67C000004747A9 /* libSDL2.a in Frameworks */,
+				4DACAEB52F67C000004747A9 /* libSDL2_net.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D6EED7F2EB9452400862BF3 = {
+			isa = PBXGroup;
+			children = (
+				4DACAE3F2F67AFCD004747A9 /* src */,
+				4D6EEDCC2EB947A000862BF3 /* SDL_net.xcodeproj */,
+				4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */,
+				4D6EEDDA2EB9492D00862BF3 /* Frameworks */,
+				4D6EED892EB9452400862BF3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D6EED892EB9452400862BF3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D6EED882EB9452400862BF3 /* OpenTyrian2000-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D6EEDDA2EB9492D00862BF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DACAE3F2F67AFCD004747A9 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4DACADDD2F67AFCD004747A9 /* animlib.h */,
+				4DACADDE2F67AFCD004747A9 /* animlib.c */,
+				4DACADDF2F67AFCD004747A9 /* arg_parse.h */,
+				4DACADE02F67AFCD004747A9 /* arg_parse.c */,
+				4DACADE12F67AFCD004747A9 /* backgrnd.h */,
+				4DACADE22F67AFCD004747A9 /* backgrnd.c */,
+				4DACADE32F67AFCD004747A9 /* config.h */,
+				4DACADE42F67AFCD004747A9 /* config.c */,
+				4DACADE52F67AFCD004747A9 /* config_file.h */,
+				4DACADE62F67AFCD004747A9 /* config_file.c */,
+				4DACADE72F67AFCD004747A9 /* destruct.h */,
+				4DACADE82F67AFCD004747A9 /* destruct.c */,
+				4DACADE92F67AFCD004747A9 /* editship.h */,
+				4DACADEA2F67AFCD004747A9 /* editship.c */,
+				4DACADEB2F67AFCD004747A9 /* episodes.h */,
+				4DACADEC2F67AFCD004747A9 /* episodes.c */,
+				4DACADED2F67AFCD004747A9 /* file.h */,
+				4DACADEE2F67AFCD004747A9 /* file.c */,
+				4DACADEF2F67AFCD004747A9 /* font.h */,
+				4DACADF02F67AFCD004747A9 /* font.c */,
+				4DACADF12F67AFCD004747A9 /* fonthand.h */,
+				4DACADF22F67AFCD004747A9 /* fonthand.c */,
+				4DACADF32F67AFCD004747A9 /* game_menu.h */,
+				4DACADF42F67AFCD004747A9 /* game_menu.c */,
+				4DACADF52F67AFCD004747A9 /* helptext.h */,
+				4DACADF62F67AFCD004747A9 /* helptext.c */,
+				4DACADF72F67AFCD004747A9 /* joystick.h */,
+				4DACADF82F67AFCD004747A9 /* joystick.c */,
+				4DACADF92F67AFCD004747A9 /* jukebox.h */,
+				4DACADFA2F67AFCD004747A9 /* jukebox.c */,
+				4DACADFB2F67AFCD004747A9 /* keyboard.h */,
+				4DACADFC2F67AFCD004747A9 /* keyboard.c */,
+				4DACADFD2F67AFCD004747A9 /* lds_play.h */,
+				4DACADFE2F67AFCD004747A9 /* lds_play.c */,
+				4DACADFF2F67AFCD004747A9 /* loudness.h */,
+				4DACAE002F67AFCD004747A9 /* loudness.c */,
+				4DACAE012F67AFCD004747A9 /* lvllib.h */,
+				4DACAE022F67AFCD004747A9 /* lvllib.c */,
+				4DACAE032F67AFCD004747A9 /* lvlmast.h */,
+				4DACAE042F67AFCD004747A9 /* lvlmast.c */,
+				4DACAE052F67AFCD004747A9 /* mainint.h */,
+				4DACAE062F67AFCD004747A9 /* mainint.c */,
+				4DACAE072F67AFCD004747A9 /* menus.h */,
+				4DACAE082F67AFCD004747A9 /* menus.c */,
+				4DACAE092F67AFCD004747A9 /* mouse.h */,
+				4DACAE0A2F67AFCD004747A9 /* mouse.c */,
+				4DACAE0B2F67AFCD004747A9 /* mtrand.h */,
+				4DACAE0C2F67AFCD004747A9 /* mtrand.c */,
+				4DACAE0D2F67AFCD004747A9 /* musmast.h */,
+				4DACAE0E2F67AFCD004747A9 /* musmast.c */,
+				4DACAE0F2F67AFCD004747A9 /* network.h */,
+				4DACAE102F67AFCD004747A9 /* network.c */,
+				4DACAE112F67AFCD004747A9 /* nortsong.h */,
+				4DACAE122F67AFCD004747A9 /* nortsong.c */,
+				4DACAE132F67AFCD004747A9 /* nortvars.h */,
+				4DACAE142F67AFCD004747A9 /* nortvars.c */,
+				4DACAE152F67AFCD004747A9 /* opentyr.h */,
+				4DACAE162F67AFCD004747A9 /* opentyr.c */,
+				4DACAE172F67AFCD004747A9 /* opentyrian_version.h */,
+				4DACAE182F67AFCD004747A9 /* opl.h */,
+				4DACAE192F67AFCD004747A9 /* opl.c */,
+				4DACAE1A2F67AFCD004747A9 /* palette.h */,
+				4DACAE1B2F67AFCD004747A9 /* palette.c */,
+				4DACAE1C2F67AFCD004747A9 /* params.h */,
+				4DACAE1D2F67AFCD004747A9 /* params.c */,
+				4DACAE1E2F67AFCD004747A9 /* pcxload.h */,
+				4DACAE1F2F67AFCD004747A9 /* pcxload.c */,
+				4DACAE202F67AFCD004747A9 /* pcxmast.h */,
+				4DACAE212F67AFCD004747A9 /* pcxmast.c */,
+				4DACAE222F67AFCD004747A9 /* picload.h */,
+				4DACAE232F67AFCD004747A9 /* picload.c */,
+				4DACAE242F67AFCD004747A9 /* player.h */,
+				4DACAE252F67AFCD004747A9 /* player.c */,
+				4DACAE262F67AFCD004747A9 /* shots.h */,
+				4DACAE272F67AFCD004747A9 /* shots.c */,
+				4DACAE282F67AFCD004747A9 /* sizebuf.h */,
+				4DACAE292F67AFCD004747A9 /* sizebuf.c */,
+				4DACAE2A2F67AFCD004747A9 /* sndmast.h */,
+				4DACAE2B2F67AFCD004747A9 /* sndmast.c */,
+				4DACAE2C2F67AFCD004747A9 /* sprite.h */,
+				4DACAE2D2F67AFCD004747A9 /* sprite.c */,
+				4DACAE2E2F67AFCD004747A9 /* starlib.h */,
+				4DACAE2F2F67AFCD004747A9 /* starlib.c */,
+				4DACAE302F67AFCD004747A9 /* tyrian2.h */,
+				4DACAE312F67AFCD004747A9 /* tyrian2.c */,
+				4DACAE322F67AFCD004747A9 /* varz.h */,
+				4DACAE332F67AFCD004747A9 /* varz.c */,
+				4DACAE342F67AFCD004747A9 /* vga_palette.h */,
+				4DACAE352F67AFCD004747A9 /* vga_palette.c */,
+				4DACAE362F67AFCD004747A9 /* vga256d.h */,
+				4DACAE372F67AFCD004747A9 /* vga256d.c */,
+				4DACAE382F67AFCD004747A9 /* video.h */,
+				4DACAE392F67AFCD004747A9 /* video.c */,
+				4DACAE3A2F67AFCD004747A9 /* video_scale.h */,
+				4DACAE3B2F67AFCD004747A9 /* video_scale.c */,
+				4DACAE3C2F67AFCD004747A9 /* video_scale_hqNx.c */,
+				4DACAE3D2F67AFCD004747A9 /* xmas.h */,
+				4DACAE3E2F67AFCD004747A9 /* xmas.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+
+		4DACAE7C2F67B2F0004747A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DACAEB22F67C000004747A9 /* libSDL2.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DACAE712F67B2DA004747A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DACAEB32F67C000004747A9 /* libSDL2_net.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D6EED872EB9452400862BF3 /* OpenTyrian2000-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D6EEDA32EB9452500862BF3 /* Build configuration list for PBXNativeTarget "OpenTyrian2000-iOS" */;
+			buildPhases = (
+				4D6EED842EB9452400862BF3 /* Sources */,
+				4D6EED852EB9452400862BF3 /* Frameworks */,
+				4D6EED862EB9452400862BF3 /* Resources */,
+				4D6EEDDF2EB9495500862BF3 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DACAEB62F67C000004747A9 /* PBXTargetDependency */,
+				4DACAEB72F67C000004747A9 /* PBXTargetDependency */,
+			);
+			name = "OpenTyrian2000-iOS";
+			packageProductDependencies = (
+			);
+			productName = "OpenTyrian2000-iOS";
+			productReference = 4D6EED882EB9452400862BF3 /* OpenTyrian2000-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D6EED802EB9452400862BF3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					4D6EED872EB9452400862BF3 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 4D6EED832EB9452400862BF3 /* Build configuration list for PBXProject "OpenTyrian2000-iOS" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D6EED7F2EB9452400862BF3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4D6EED892EB9452400862BF3 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4DACAE7C2F67B2F0004747A9 /* Products */;
+					ProjectRef = 4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */;
+				},
+				{
+					ProductGroup = 4DACAE712F67B2DA004747A9 /* Products */;
+					ProjectRef = 4D6EEDCC2EB947A000862BF3 /* SDL_net.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				4D6EED872EB9452400862BF3 /* OpenTyrian2000-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4DACAEB22F67C000004747A9 /* libSDL2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.a;
+			remoteRef = 4DACAEB02F67C000004747A9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4DACAEB32F67C000004747A9 /* libSDL2_net.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2_net.a;
+			remoteRef = 4DACAEB12F67C000004747A9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D6EED862EB9452400862BF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4DACAEB62F67C000004747A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Static Library-iOS";
+			targetProxy = 4DACAEB82F67C000004747A9 /* PBXContainerItemProxy */;
+		};
+		4DACAEB72F67C000004747A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Static Library";
+			targetProxy = 4DACAEB92F67C000004747A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D6EED842EB9452400862BF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DACAE402F67AFCD004747A9 /* palette.c in Sources */,
+				4DACAE412F67AFCD004747A9 /* opentyr.c in Sources */,
+				4DACAE422F67AFCD004747A9 /* game_menu.c in Sources */,
+				4DACAE432F67AFCD004747A9 /* lvlmast.c in Sources */,
+				4DACAE442F67AFCD004747A9 /* backgrnd.c in Sources */,
+				4DACAE452F67AFCD004747A9 /* varz.c in Sources */,
+				4DACAE462F67AFCD004747A9 /* starlib.c in Sources */,
+				4DACAE472F67AFCD004747A9 /* joystick.c in Sources */,
+				4DACAE482F67AFCD004747A9 /* sprite.c in Sources */,
+				4DACAE492F67AFCD004747A9 /* arg_parse.c in Sources */,
+				4DACAE4A2F67AFCD004747A9 /* helptext.c in Sources */,
+				4DACAE4B2F67AFCD004747A9 /* config.c in Sources */,
+				4DACAE4C2F67AFCD004747A9 /* video_scale.c in Sources */,
+				4DACAE4D2F67AFCD004747A9 /* video_scale_hqNx.c in Sources */,
+				4DACAE4E2F67AFCD004747A9 /* mtrand.c in Sources */,
+				4DACAE4F2F67AFCD004747A9 /* opl.c in Sources */,
+				4DACAE502F67AFCD004747A9 /* jukebox.c in Sources */,
+				4DACAE512F67AFCD004747A9 /* params.c in Sources */,
+				4DACAE522F67AFCD004747A9 /* nortvars.c in Sources */,
+				4DACAE532F67AFCD004747A9 /* picload.c in Sources */,
+				4DACAE542F67AFCD004747A9 /* video.c in Sources */,
+				4DACAE552F67AFCD004747A9 /* config_file.c in Sources */,
+				4DACAE562F67AFCD004747A9 /* player.c in Sources */,
+				4DACAE572F67AFCD004747A9 /* tyrian2.c in Sources */,
+				4DACAE582F67AFCD004747A9 /* pcxmast.c in Sources */,
+				4DACAE592F67AFCD004747A9 /* sizebuf.c in Sources */,
+				4DACAE5A2F67AFCD004747A9 /* lvllib.c in Sources */,
+				4DACAE5B2F67AFCD004747A9 /* shots.c in Sources */,
+				4DACAE5C2F67AFCD004747A9 /* episodes.c in Sources */,
+				4DACAE5D2F67AFCD004747A9 /* fonthand.c in Sources */,
+				4DACAE5E2F67AFCD004747A9 /* musmast.c in Sources */,
+				4DACAE5F2F67AFCD004747A9 /* menus.c in Sources */,
+				4DACAE602F67AFCD004747A9 /* nortsong.c in Sources */,
+				4DACAE612F67AFCD004747A9 /* mainint.c in Sources */,
+				4DACAE622F67AFCD004747A9 /* vga256d.c in Sources */,
+				4DACAE632F67AFCD004747A9 /* vga_palette.c in Sources */,
+				4DACAE642F67AFCD004747A9 /* xmas.c in Sources */,
+				4DACAE652F67AFCD004747A9 /* font.c in Sources */,
+				4DACAE662F67AFCD004747A9 /* lds_play.c in Sources */,
+				4DACAE672F67AFCD004747A9 /* file.c in Sources */,
+				4DACAE682F67AFCD004747A9 /* animlib.c in Sources */,
+				4DACAE692F67AFCD004747A9 /* destruct.c in Sources */,
+				4DACAE6A2F67AFCD004747A9 /* loudness.c in Sources */,
+				4DACAE6B2F67AFCD004747A9 /* sndmast.c in Sources */,
+				4DACAE6C2F67AFCD004747A9 /* keyboard.c in Sources */,
+				4DACAE6D2F67AFCD004747A9 /* network.c in Sources */,
+				4DACAE6E2F67AFCD004747A9 /* editship.c in Sources */,
+				4DACAE6F2F67AFCD004747A9 /* mouse.c in Sources */,
+				4DACAE702F67AFCD004747A9 /* pcxload.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4D6EEDA12EB9452500862BF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = W665WE8428;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+			};
+			name = Debug;
+		};
+		4D6EEDA22EB9452500862BF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = W665WE8428;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D6EEDA42EB9452500862BF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../SDL/SDL/include\"",
+					"\"$(SRCROOT)/../SDL/SDL_net/include\"",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "OpenTyrian2000-iOS";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIFileSharingEnabled = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "tudoraneau.OpenTyrian2000-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		4D6EEDA52EB9452500862BF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../SDL/SDL/include\"",
+					"\"$(SRCROOT)/../SDL/SDL_net/include\"",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "OpenTyrian2000-iOS";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIFileSharingEnabled = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "tudoraneau.OpenTyrian2000-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D6EED832EB9452400862BF3 /* Build configuration list for PBXProject "OpenTyrian2000-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D6EEDA12EB9452500862BF3 /* Debug */,
+				4D6EEDA22EB9452500862BF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D6EEDA32EB9452500862BF3 /* Build configuration list for PBXNativeTarget "OpenTyrian2000-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D6EEDA42EB9452500862BF3 /* Debug */,
+				4D6EEDA52EB9452500862BF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D6EED802EB9452400862BF3 /* Project object */;
+}
