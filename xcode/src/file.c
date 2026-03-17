@@ -27,6 +27,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+
+#ifndef TYRIAN_DIR
+#define TYRIAN_DIR NULL
+#endif
+
+#ifndef ARRAY_COUNT
+#define ARRAY_COUNT(a) (sizeof(a) / sizeof((a)[0]))
+#endif
 
 const char *custom_data_dir = NULL;
 
@@ -46,20 +55,52 @@ const char *data_dir(void)
 	if (dir != NULL)
 		return dir;
 
-	for (uint i = 0; i < COUNTOF(dirs); ++i)
-	{
-		if (dirs[i] == NULL)
-			continue;
+#ifdef __IPHONEOS__
+        // On iOS, read game data from Downloads/Tyrian20
 
-		FILE *f = dir_fopen(dirs[i], "tyrian1.lvl", "rb");
-		if (f)
-		{
-			fclose(f);
+        static char ios_downloads_path[1024] = "";
 
-			dir = dirs[i];
-			break;
-		}
-	}
+        const char *home = getenv("HOME");
+        if (home)
+        {
+                snprintf(ios_downloads_path, sizeof(ios_downloads_path),
+                         "%s/Downloads/Tyrian20", home);
+        }
+
+        const char *const ios_dirs[] = {
+                custom_data_dir,
+                ios_downloads_path,
+        };
+
+        for (size_t i = 0; i < sizeof(ios_dirs) / sizeof(ios_dirs[0]); ++i)
+        {
+                if (!ios_dirs[i] || ios_dirs[i][0] == '\0')
+                        continue;
+
+                FILE *f = dir_fopen(ios_dirs[i], "tyrian1.lvl", "rb");
+                if (f)
+                {
+                        fclose(f);
+                        dir = ios_dirs[i];
+                        break;
+                }
+        }
+#else
+        for (size_t i = 0; i < ARRAY_COUNT(dirs); ++i)
+        {
+                if (dirs[i] == NULL)
+                        continue;
+
+                FILE *f = dir_fopen(dirs[i], "tyrian1.lvl", "rb");
+                if (f)
+                {
+                        fclose(f);
+
+                        dir = dirs[i];
+                        break;
+                }
+        }
+#endif
 
 	if (dir == NULL) // data not found
 		dir = "";
@@ -70,14 +111,35 @@ const char *data_dir(void)
 // prepend directory and fopen
 FILE *dir_fopen(const char *dir, const char *file, const char *mode)
 {
-	char *path = malloc(strlen(dir) + 1 + strlen(file) + 1);
-	sprintf(path, "%s/%s", dir, file);
+    size_t dir_len = strlen(dir);
+    size_t file_len = strlen(file);
+    int needs_slash = (dir_len > 0 && dir[dir_len - 1] != '/');
+    size_t path_len = dir_len + (needs_slash ? 1 : 0) + file_len;
+    char *path = malloc(path_len + 1);
+    if (!path) {
+        return NULL;
+    }
+    if (needs_slash) {
+        sprintf(path, "%s/%s", dir, file);
+    } else {
+        sprintf(path, "%s%s", dir, file);
+    }
 
-	FILE *f = fopen(path, mode);
+    FILE *f = fopen(path, mode);
 
-	free(path);
+    // On case-sensitive filesystems (iOS), try uppercase filename if
+    // lowercase failed — original Tyrian 2000 ships UPPERCASE files.
+    if (!f)
+    {
+        size_t fname_offset = dir_len + (needs_slash ? 1 : 0);
+        for (size_t i = fname_offset; i < path_len; ++i)
+            path[i] = toupper((unsigned char)path[i]);
+        f = fopen(path, mode);
+    }
 
-	return f;
+    free(path);
+
+    return f;
 }
 
 // warn when dir_fopen fails
@@ -131,10 +193,12 @@ long ftell_eof(FILE *f)
 
 void fread_die(void *buffer, size_t size, size_t count, FILE *stream)
 {
+	long pos = ftell(stream);
 	size_t result = fread(buffer, size, count, stream);
 	if (result != count)
 	{
-		fprintf(stderr, "error: An unexpected problem occurred while reading from a file.\n");
+		fprintf(stderr, "error: fread_die failed at offset %ld, requested %zu*%zu, got %zu (feof=%d ferror=%d)\n",
+		        pos, size, count, result, feof(stream), ferror(stream));
 		SDL_Quit();
 		exit(EXIT_FAILURE);
 	}
@@ -150,3 +214,4 @@ void fwrite_die(const void *buffer, size_t size, size_t count, FILE *stream)
 		exit(EXIT_FAILURE);
 	}
 }
+
