@@ -752,7 +752,8 @@ int main(int argc, char *argv[])
 	printf("\nWelcome to... >> %s %s <<\n\n", opentyrian_str, opentyrian_version);
 
 	printf("Copyright (C) 2022 The OpenTyrian Development Team\n");
-	printf("Copyright (C) 2022 Kaito Sinclaire\n\n");
+	printf("Copyright (C) 2022 Kaito Sinclaire\n");
+	printf("Copyright (C) 2026 Felix Tudoran\n\n");
 
 	printf("This program comes with ABSOLUTELY NO WARRANTY.\n");
 	printf("This is free software, and you are welcome to redistribute it\n");

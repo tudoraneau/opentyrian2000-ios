@@ -56,20 +56,30 @@ const char *data_dir(void)
 		return dir;
 
 #ifdef __IPHONEOS__
-        // On iOS, read game data from Downloads/Tyrian20
+        // On iOS, look in the app bundle first (for bundled data),
+        // then in Documents/Tyrian20 (accessible via Files app / iTunes file sharing).
 
-        static char ios_downloads_path[1024] = "";
+        static char ios_bundle_path[1024] = "";
+        static char ios_documents_path[1024] = "";
+
+        char *base = SDL_GetBasePath();
+        if (base)
+        {
+                snprintf(ios_bundle_path, sizeof(ios_bundle_path), "%s", base);
+                SDL_free(base);
+        }
 
         const char *home = getenv("HOME");
         if (home)
         {
-                snprintf(ios_downloads_path, sizeof(ios_downloads_path),
-                         "%s/Downloads/Tyrian20", home);
+                snprintf(ios_documents_path, sizeof(ios_documents_path),
+                         "%s/Documents/Tyrian20", home);
         }
 
         const char *const ios_dirs[] = {
                 custom_data_dir,
-                ios_downloads_path,
+                ios_bundle_path,
+                ios_documents_path,
         };
 
         for (size_t i = 0; i < sizeof(ios_dirs) / sizeof(ios_dirs[0]); ++i)
