@@ -88,9 +88,18 @@ void init_video(void)
 
 	// Create the window with a temporary initial size, hidden until we set up the
 	// scaler and find the true window size
+#ifdef __IPHONEOS__
+	main_window = SDL_CreateWindow(opentyrian_str,
+		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+		0, 0, SDL_WINDOW_FULLSCREEN);
+	// Pump events so UIKit finishes laying out the window before we create
+	// the Metal renderer; without this, the drawable height is 0.
+	SDL_PumpEvents();
+#else
 	main_window = SDL_CreateWindow(opentyrian_str,
 		SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 		vga_width, vga_height, SDL_WINDOW_RESIZABLE | SDL_WINDOW_HIDDEN);
+#endif
 
 	if (main_window == NULL)
 	{
@@ -98,12 +107,16 @@ void init_video(void)
 		exit(EXIT_FAILURE);
 	}
 
+#ifndef __IPHONEOS__
 	reinit_fullscreen(fullscreen_display);
+#endif
 	init_renderer();
 	init_texture();
 	init_scaler(scaler);
 
+#ifndef __IPHONEOS__
 	SDL_ShowWindow(main_window);
+#endif
 
 	SDL_SetRenderDrawColor(main_window_renderer, 0, 0, 0, 255);
 	SDL_RenderClear(main_window_renderer);
@@ -225,6 +238,11 @@ void reinit_fullscreen(int new_display)
 
 void video_on_win_resize(void)
 {
+#ifdef __IPHONEOS__
+	// On iOS the window is always fullscreen; ignore spurious resize events
+	// that fire before UIKit finishes layout to prevent crashes during while rotating the screen
+	return;
+#else
 	int w, h;
 	int scaler_w, scaler_h;
 
@@ -242,7 +260,16 @@ void video_on_win_resize(void)
 
 		SDL_SetWindowSize(main_window, w, h);
 	}
+#endif
 }
+
+#ifdef __IPHONEOS__
+void video_on_drawable_resize(int w, int h)
+{
+	(void)w;
+	(void)h;
+}
+#endif
 
 void toggle_fullscreen(void)
 {
@@ -265,10 +292,12 @@ bool init_scaler(unsigned int new_scaler)
 
 	if (fullscreen_display == -1)
 	{
+#ifndef __IPHONEOS__
 		// Changing scalers, when not in fullscreen mode, forces the window
 		// to resize to exactly match the scaler's output dimensions.
 		SDL_SetWindowSize(main_window, w, h);
 		window_center_in_display(window_get_display_index());
+#endif
 	}
 
 	switch (bpp)

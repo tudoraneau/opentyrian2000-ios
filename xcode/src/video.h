@@ -49,6 +49,9 @@ extern SDL_PixelFormat *main_window_tex_format;
 void init_video(void);
 
 void video_on_win_resize(void);
+#ifdef __IPHONEOS__
+void video_on_drawable_resize(int w, int h);
+#endif
 void reinit_fullscreen(int new_display);
 void toggle_fullscreen(void);
 bool init_scaler(unsigned int new_scaler);
