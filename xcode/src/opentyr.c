@@ -56,6 +56,10 @@
 #include <string.h>
 #include <time.h>
 
+#ifdef __IPHONEOS__
+#include <sys/stat.h>
+#endif
+
 const char *opentyrian_str = "OpenTyrian2000";
 const char *opentyrian_version = OPENTYRIAN_VERSION;
 
@@ -770,6 +774,39 @@ int main(int argc, char *argv[])
 	// because the default high score names are stored in help text
 
 	JE_paramCheck(argc, argv);
+
+#ifdef __IPHONEOS__
+	// Ensure the Documents/Tyrian20 directory exists so the Files app
+	// shows *something* even on first launch, then exit out gracefully
+	// if the game data isn't present yet.
+	{
+		const char *home = getenv("HOME");
+		if (home)
+		{
+			char docs_path[1024];
+			snprintf(docs_path, sizeof(docs_path), "%s/Documents/Tyrian20", home);
+
+			// Create the directory so Files app shows the folder
+			mkdir(docs_path, 0755);
+
+			// Check if data files are present
+			FILE *test = dir_fopen(docs_path, "tyrian1.lvl", "rb");
+			if (!test)
+			{
+				SDL_ShowSimpleMessageBox(
+					SDL_MESSAGEBOX_ERROR,
+					"Data Files Missing",
+					"Please place your legally obtained Tyrian 2000 data files in:\n\n"
+					"Files app > On My iPhone > OpenTyrian2000-iOS > Tyrian20\n\n"
+					"The app will now exit.",
+					NULL);
+				SDL_Quit();
+				exit(0);
+			}
+			fclose(test);
+		}
+	}
+#endif
 
 	if (!override_xmas) // arg handler may override
 		xmas = xmas_time();
