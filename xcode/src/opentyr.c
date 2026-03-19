@@ -804,6 +804,43 @@ int main(int argc, char *argv[])
 				exit(0);
 			}
 			fclose(test);
+
+			// Check that the data files are the Tyrian 2000 two-bank format.
+			// Original Tyrian uses a single-bank HDT
+			FILE *hdt = dir_fopen(docs_path, "tyrian.hdt", "rb");
+			if (hdt)
+			{
+				Sint32 ep1loc = 0;
+				Uint16 item_count = 0;
+				bool format_good = false;
+				if (fread(&ep1loc, sizeof(ep1loc), 1, hdt) == 1)
+				{
+					ep1loc = SDL_SwapLE32(ep1loc);
+					if (fseek(hdt, ep1loc, SEEK_SET) == 0)
+					{
+						if (fread(&item_count, sizeof(item_count), 1, hdt) == 1)
+						{
+							item_count = SDL_SwapLE16(item_count);
+							format_good = (item_count >= WEAP_END1);
+						}
+					}
+				}
+				fclose(hdt);
+				if (!format_good)
+				{
+					SDL_ShowSimpleMessageBox(
+						SDL_MESSAGEBOX_ERROR,
+						"Wrong Data File Format",
+						"The data files found are not Tyrian 2000 format.\n\n"
+						"This app requires the Tyrian 2000 data files.\n"
+						"Please replace them with the correct files in:\n\n"
+						"Files app > On My iPhone > OpenTyrian2000-iOS > Tyrian20\n\n"
+						"The app will now exit.",
+						NULL);
+					SDL_Quit();
+					exit(0);
+				}
+			}
 		}
 	}
 #endif
