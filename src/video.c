@@ -1,6 +1,7 @@
 /*
  * OpenTyrian: A modern cross-platform port of Tyrian
  * Copyright (C) 2007-2009  The OpenTyrian Development Team
+ * Copyright (C) 2026 Felix Tudoran (OpenTyrian2000-iOS port)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -423,6 +424,9 @@ static void scale_and_flip(SDL_Surface *src_surface)
 	SDL_SetRenderDrawColor(main_window_renderer, 0, 0, 0, 255);
 	SDL_RenderClear(main_window_renderer);
 	SDL_RenderCopy(main_window_renderer, main_window_texture, NULL, &dst_rect);
+#ifdef __IPHONEOS__
+	vpad_draw_overlay();
+#endif
 	SDL_RenderPresent(main_window_renderer);
 
 	// Save output rect to be used by mouse functions

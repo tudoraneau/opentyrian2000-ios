@@ -1,6 +1,7 @@
 /* 
  * OpenTyrian: A modern cross-platform port of Tyrian
  * Copyright (C) 2007-2009  The OpenTyrian Development Team
+ * Copyright (C) 2026 Felix Tudoran (OpenTyrian2000-iOS port)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -55,5 +56,11 @@ void service_SDL_events(JE_boolean clear_new);
 void sleep_game(void);
 
 void JE_clearKeyboard(void);
+
+#ifdef __IPHONEOS__
+// Draw transparent virtual-gamepad indicators on top of the current frame.
+// Must be called between SDL_RenderCopy and SDL_RenderPresent.
+void vpad_draw_overlay(void);
+#endif
 
 #endif /* KEYBOARD_H */
