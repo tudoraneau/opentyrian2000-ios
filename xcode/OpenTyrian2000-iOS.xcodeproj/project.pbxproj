@@ -61,6 +61,7 @@
 		4DACAF022F68C000004747A9 /* SDLnetTCP.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAF062F68C000004747A9 /* SDLnetTCP.c */; };
 		4DACAF032F68C000004747A9 /* SDLnetUDP.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAF072F68C000004747A9 /* SDLnetUDP.c */; };
 		4DACAF042F68C000004747A9 /* SDLnetselect.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAF082F68C000004747A9 /* SDLnetselect.c */; };
+		4DB8E9752F70744E00AAF9B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8E9742F70744E00AAF9B5 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,7 @@
 		4DACAF062F68C000004747A9 /* SDLnetTCP.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = SDLnetTCP.c; path = ../SDL/SDL_net/SDLnetTCP.c; sourceTree = SOURCE_ROOT; };
 		4DACAF072F68C000004747A9 /* SDLnetUDP.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = SDLnetUDP.c; path = ../SDL/SDL_net/SDLnetUDP.c; sourceTree = SOURCE_ROOT; };
 		4DACAF082F68C000004747A9 /* SDLnetselect.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = SDLnetselect.c; path = ../SDL/SDL_net/SDLnetselect.c; sourceTree = SOURCE_ROOT; };
+		4DB8E9742F70744E00AAF9B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 		4D6EED7F2EB9452400862BF3 = {
 			isa = PBXGroup;
 			children = (
+				4DB8E9742F70744E00AAF9B5 /* Assets.xcassets */,
 				4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */,
 				4D6EEDDA2EB9492D00862BF3 /* Frameworks */,
 				4D6EED892EB9452400862BF3 /* Products */,
@@ -441,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DB8E9752F70744E00AAF9B5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +649,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A53FZ7627B;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../SDL/SDL/include\"",
@@ -712,6 +717,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A53FZ7627B;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../SDL/SDL/include\"",
