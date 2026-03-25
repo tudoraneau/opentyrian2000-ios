@@ -19,6 +19,7 @@
  */
 #include "video.h"
 
+#include "gamepad.h"
 #include "keyboard.h"
 #include "opentyr.h"
 #include "palette.h"
@@ -343,7 +344,20 @@ void JE_clr256(SDL_Surface *screen)
 
 void JE_showVGA(void) 
 { 
+#ifdef __IPHONEOS__
+	// Save the top 24 rows (covers both lines of small_font text + shadow),
+	// draw the notification overlay, present the frame, then restore so
+	// VGAScreen is never permanently modified.  Without the restore, screens
+	// that don't fully redraw every frame keep the text visible indefinitely
+	// after the timer expires.
+	Uint8 top_save[24 * 320]; // VGAScreen is always 320-wide 8 bpp
+	memcpy(top_save, VGAScreen->pixels, sizeof(top_save));
+	draw_gamepad_notification();
+	scale_and_flip(VGAScreen);
+	memcpy(VGAScreen->pixels, top_save, sizeof(top_save));
+#else
 	scale_and_flip(VGAScreen); 
+#endif
 }
 
 static void calc_dst_render_rect(SDL_Surface *const src_surface, SDL_Rect *const dst_rect)

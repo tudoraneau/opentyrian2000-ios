@@ -23,7 +23,9 @@
 #ifdef __IPHONEOS__
 
 #include "config.h"
+#include "font.h"
 #include "keyboard.h"
+#include "video.h"
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -40,6 +42,7 @@ static SDL_GameController *gpads[GPAD_MAX];
 static int                 gpad_count  = 0;
 static int                 gpad_last_n = -1; // last SDL_NumJoysticks() value
 static bool                gpad_keydown = false; // controller contributing to keydown
+static Uint32              gpad_notify_until = 0; // SDL_GetTicks() deadline for the HUD notification
 
 // Previous button states for rising-edge detection (newkey / lastkey_scan).
 static bool gpad_prev_up     = false;
@@ -107,6 +110,13 @@ static void gpad_scan(void)
             {
                 gpads[gpad_count++] = gc;
                 printf("gamepad connected: %s\n", SDL_GameControllerName(gc));
+                // Only start the timer if it isn't already counting down;
+                // avoids the message staying forever when the joystick count
+                // flickers (iOS BT enumeration) and gpad_scan re-opens the same
+                // controller multiple times in quick succession.
+                Uint32 _now = SDL_GetTicks();
+                if ((Sint32)(_now - gpad_notify_until) >= 0)
+                    gpad_notify_until = _now + 4000;
             }
         }
     }
@@ -192,6 +202,20 @@ void poll_gamecontrollers(void)
 bool gamepad_is_connected(void)
 {
     return gpad_count > 0;
+}
+
+// Draw a brief "Gamepad Connected" banner at the top-center of VGAScreen.
+// Must be called after the game has finished drawing the current frame but
+// before JE_showVGA() submits it to the renderer.
+void draw_gamepad_notification(void)
+{
+    // Signed comparison handles Uint32 wraparound correctly.
+    if (!VGAScreen || (Sint32)(SDL_GetTicks() - gpad_notify_until) >= 0)
+        return;
+
+    const int x = vga_width / 2; // 160 – center of the 320px screen
+    draw_font_hv_shadow(VGAScreen, x,  4, "Gamepad Connected.",          small_font, centered, 15, 4, false, 1);
+    draw_font_hv_shadow(VGAScreen, x, 13, "On-screen controls disabled.", small_font, centered, 15, 4, false, 1);
 }
 
 // Initialize the SDL game controller subsystem. Must be called after

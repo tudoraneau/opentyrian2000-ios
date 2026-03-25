@@ -37,6 +37,10 @@ bool gamepad_is_connected(void);
  * Called from service_SDL_events() every frame. */
 void poll_gamecontrollers(void);
 
+/* Draw the "Gamepad Connected" banner onto VGAScreen for ~4 s after a
+ * controller is first detected.  Call from JE_showVGA() before scale_and_flip. */
+void draw_gamepad_notification(void);
+
 #endif /* __IPHONEOS__ */
 
 #endif /* GAMEPAD_H */
