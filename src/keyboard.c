@@ -20,6 +20,7 @@
 #include "keyboard.h"
 
 #include "config.h"
+#include "gamepad.h"
 #include "joystick.h"
 #include "mouse.h"
 #include "network.h"
@@ -313,6 +314,7 @@ static void vpad_draw_label(SDL_Renderer *r, int cx, int cy, int radius,
 
 void vpad_draw_overlay(void)
 {
+    if (gamepad_is_connected()) return; // hide overlay when a BT controller is connected
     if (!main_window) return;
     SDL_Renderer *renderer = SDL_GetRenderer(main_window);
     if (!renderer) return;
@@ -467,6 +469,7 @@ void init_keyboard(void)
         SDL_SetHint(SDL_HINT_TOUCH_MOUSE_EVENTS, "0");
         SDL_SetHint(SDL_HINT_MOUSE_TOUCH_EVENTS, "0");
         memset(fingerTracks, 0, sizeof(fingerTracks));
+
 #endif
 }
 
@@ -644,6 +647,12 @@ void service_SDL_events(JE_boolean clear_new)
 #endif
 		}
 	}
+
+#ifdef __IPHONEOS__
+	// Pure-polling controller update: reads button/axis state directly so
+	// SDL_JoystickEventState(SDL_IGNORE) cannot prevent controller input.
+	poll_gamecontrollers();
+#endif
 }
 
 void JE_clearKeyboard(void)

@@ -52,6 +52,7 @@
 		4DACAE6A2F67AFCD004747A9 /* loudness.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE002F67AFCD004747A9 /* loudness.c */; };
 		4DACAE6B2F67AFCD004747A9 /* sndmast.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE2B2F67AFCD004747A9 /* sndmast.c */; };
 		4DACAE6C2F67AFCD004747A9 /* keyboard.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADFC2F67AFCD004747A9 /* keyboard.c */; };
+		4DBCAE002F67AFCD004747A9 /* gamepad.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCADD12F67AFCD004747A9 /* gamepad.c */; };
 		4DACAE6D2F67AFCD004747A9 /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE102F67AFCD004747A9 /* network.c */; };
 		4DACAE6E2F67AFCD004747A9 /* editship.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADEA2F67AFCD004747A9 /* editship.c */; };
 		4DACAE6F2F67AFCD004747A9 /* mouse.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE0A2F67AFCD004747A9 /* mouse.c */; };
@@ -127,6 +128,8 @@
 		4DACADF82F67AFCD004747A9 /* joystick.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = joystick.c; sourceTree = "<group>"; };
 		4DACADF92F67AFCD004747A9 /* jukebox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jukebox.h; sourceTree = "<group>"; };
 		4DACADFA2F67AFCD004747A9 /* jukebox.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = jukebox.c; sourceTree = "<group>"; };
+		4DBCADD02F67AFCD004747A9 /* gamepad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gamepad.h; sourceTree = "<group>"; };
+		4DBCADD12F67AFCD004747A9 /* gamepad.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gamepad.c; sourceTree = "<group>"; };
 		4DACADFB2F67AFCD004747A9 /* keyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keyboard.h; sourceTree = "<group>"; };
 		4DACADFC2F67AFCD004747A9 /* keyboard.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = keyboard.c; sourceTree = "<group>"; };
 		4DACADFD2F67AFCD004747A9 /* lds_play.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lds_play.h; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 				4DACADF82F67AFCD004747A9 /* joystick.c */,
 				4DACADF92F67AFCD004747A9 /* jukebox.h */,
 				4DACADFA2F67AFCD004747A9 /* jukebox.c */,
+				4DBCADD02F67AFCD004747A9 /* gamepad.h */,
+				4DBCADD12F67AFCD004747A9 /* gamepad.c */,
 				4DACADFB2F67AFCD004747A9 /* keyboard.h */,
 				4DACADFC2F67AFCD004747A9 /* keyboard.c */,
 				4DACADFD2F67AFCD004747A9 /* lds_play.h */,
@@ -504,6 +509,7 @@
 				4DACAE6E2F67AFCD004747A9 /* editship.c in Sources */,
 				4DACAE6F2F67AFCD004747A9 /* mouse.c in Sources */,
 				4DACAE702F67AFCD004747A9 /* pcxload.c in Sources */,
+				4DBCAE002F67AFCD004747A9 /* gamepad.c in Sources */,
 				4DACAF012F68C000004747A9 /* SDLnet.c in Sources */,
 				4DACAF022F68C000004747A9 /* SDLnetTCP.c in Sources */,
 				4DACAF032F68C000004747A9 /* SDLnetUDP.c in Sources */,
