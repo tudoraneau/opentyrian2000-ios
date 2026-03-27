@@ -314,7 +314,7 @@ static void vpad_draw_label(SDL_Renderer *r, int cx, int cy, int radius,
 
 void vpad_draw_overlay(void)
 {
-    if (gamepad_is_connected()) return; // hide overlay when a BT controller is connected
+    if (gamepad_is_active()) return; // hide overlay only when a BT controller is connected AND IAP-unlocked
     if (!main_window) return;
     SDL_Renderer *renderer = SDL_GetRenderer(main_window);
     if (!renderer) return;

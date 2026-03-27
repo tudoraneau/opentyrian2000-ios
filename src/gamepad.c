@@ -18,6 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 #include "gamepad.h"
+#include "GamepadIAP.h"
 #include "SDL.h"
 
 #ifdef __IPHONEOS__
@@ -26,6 +27,8 @@
 #include "font.h"
 #include "keyboard.h"
 #include "video.h"
+
+static void gpad_release_all(void);
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -43,6 +46,39 @@ static int                 gpad_count  = 0;
 static int                 gpad_last_n = -1; // last SDL_NumJoysticks() value
 static bool                gpad_keydown = false; // controller contributing to keydown
 static Uint32              gpad_notify_until = 0; // SDL_GetTicks() deadline for the HUD notification
+
+// ---------------------------------------------------------------------------
+// IAP state machine
+//
+// UNKNOWN   — no controller has connected yet (or was re-reset after all
+//             pads disconnected without having been purchased).
+// PROMPTING — the unlock dialog is on screen; gamepad input is disabled.
+// ENABLED   — the IAP is confirmed (purchased / restored); gamepad is active.
+// DISABLED  — the user tapped "Not Now" this session; input is disabled.
+//             Resets to UNKNOWN the next time all controllers disconnect so
+//             the user gets another chance on the following reconnect.
+// ---------------------------------------------------------------------------
+typedef enum {
+    GPAD_IAP_UNKNOWN   = 0,
+    GPAD_IAP_PROMPTING = 1,
+    GPAD_IAP_ENABLED   = 2,
+    GPAD_IAP_DISABLED  = 3,
+} GpadIAPState;
+
+static GpadIAPState gpad_iap_state = GPAD_IAP_UNKNOWN;
+
+// Called on the main thread by GamepadIAP.m when the user resolves the dialog.
+static void gpad_iap_result(bool enabled)
+{
+    gpad_iap_state = enabled ? GPAD_IAP_ENABLED : GPAD_IAP_DISABLED;
+
+    // Always arm the notification banner so the user sees what happened,
+    // regardless of whether they purchased or declined.
+    gpad_notify_until = SDL_GetTicks() + 4000;
+
+    if (!enabled)
+        gpad_release_all();
+}
 
 // Previous button states for rising-edge detection (newkey / lastkey_scan).
 static bool gpad_prev_up     = false;
@@ -110,17 +146,41 @@ static void gpad_scan(void)
             {
                 gpads[gpad_count++] = gc;
                 printf("gamepad connected: %s\n", SDL_GameControllerName(gc));
-                // Only start the timer if it isn't already counting down;
-                // avoids the message staying forever when the joystick count
-                // flickers (iOS BT enumeration) and gpad_scan re-opens the same
-                // controller multiple times in quick succession.
-                Uint32 _now = SDL_GetTicks();
-                if ((Sint32)(_now - gpad_notify_until) >= 0)
-                    gpad_notify_until = _now + 4000;
+                // The HUD banner is shown only after the IAP is confirmed
+                // (see gpad_iap_result / the ENABLED path below).  Do not
+                // start the timer here so we never show it before unlock.
             }
         }
     }
     gpad_last_n = n;
+
+    // ── IAP gate ──────────────────────────────────────────────────────────
+    // When all controllers disconnect, reset non-permanent states so that
+    // the user is prompted again on the next reconnect (unless they already
+    // paid, in which case ENABLED persists forever).
+    if (gpad_count == 0)
+    {
+        if (gpad_iap_state != GPAD_IAP_ENABLED)
+            gpad_iap_state = GPAD_IAP_UNKNOWN;
+    }
+    // First time controllers appear this session: check for prior purchase
+    // or show the unlock dialog.
+    else if (gpad_iap_state == GPAD_IAP_UNKNOWN)
+    {
+        if (gamepad_iap_is_unlocked())
+        {
+            gpad_iap_state = GPAD_IAP_ENABLED;
+            // Show the brief HUD banner since this is a known-good controller.
+            Uint32 now = SDL_GetTicks();
+            if ((Sint32)(now - gpad_notify_until) >= 0)
+                gpad_notify_until = now + 4000;
+        }
+        else
+        {
+            gpad_iap_state = GPAD_IAP_PROMPTING;
+            gamepad_iap_show_prompt(gpad_iap_result);
+        }
+    }
 }
 
 // Write a key state into keysactive[] and trigger newkey on the rising edge.
@@ -147,6 +207,12 @@ void poll_gamecontrollers(void)
         gpad_scan();
 
     if (gpad_count == 0)
+        return;
+
+    // Suppress all controller input until the IAP is confirmed.  While the
+    // dialog is prompting (PROMPTING) or the user declined (DISABLED) the
+    // gamepad behaves as if nothing is connected.
+    if (gpad_iap_state != GPAD_IAP_ENABLED)
         return;
 
     SDL_GameController *gc = gpads[0];
@@ -204,6 +270,11 @@ bool gamepad_is_connected(void)
     return gpad_count > 0;
 }
 
+bool gamepad_is_active(void)
+{
+    return gpad_count > 0 && gpad_iap_state == GPAD_IAP_ENABLED;
+}
+
 // Draw a brief "Gamepad Connected" banner at the top-center of VGAScreen.
 // Must be called after the game has finished drawing the current frame but
 // before JE_showVGA() submits it to the renderer.
@@ -214,8 +285,17 @@ void draw_gamepad_notification(void)
         return;
 
     const int x = vga_width / 2; // 160 – center of the 320px screen
-    draw_font_hv_shadow(VGAScreen, x,  4, "Gamepad Connected.",          small_font, centered, 15, 4, false, 1);
-    draw_font_hv_shadow(VGAScreen, x, 13, "On-screen controls disabled.", small_font, centered, 15, 4, false, 1);
+    if (gpad_iap_state == GPAD_IAP_ENABLED)
+    {
+        draw_font_hv_shadow(VGAScreen, x,  4, "Gamepad Connected.", small_font, centered, 15, 4, false, 1);
+        draw_font_hv_shadow(VGAScreen, x, 13, "On-screen controls disabled.", small_font, centered, 15, 4, false, 1);
+    }
+    else if (gpad_iap_state == GPAD_IAP_DISABLED)
+    {
+        draw_font_hv_shadow(VGAScreen, x,  4, "Gamepad detected (add-on not purchased).", small_font, centered, 15, 4, false, 1);
+        draw_font_hv_shadow(VGAScreen, x, 13, "On-screen controls active.", small_font, centered, 15, 4, false, 1);
+    }
+    // PROMPTING: the UIAlertController is on screen — no VGA banner needed.
 }
 
 // Initialize the SDL game controller subsystem. Must be called after

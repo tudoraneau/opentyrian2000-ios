@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D4B42B42F760F9F002B90A3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4B42B32F760F9F002B90A3 /* StoreKit.framework */; };
 		4DACAE402F67AFCD004747A9 /* palette.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE1B2F67AFCD004747A9 /* palette.c */; };
 		4DACAE412F67AFCD004747A9 /* opentyr.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE162F67AFCD004747A9 /* opentyr.c */; };
 		4DACAE422F67AFCD004747A9 /* game_menu.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADF42F67AFCD004747A9 /* game_menu.c */; };
@@ -52,7 +53,6 @@
 		4DACAE6A2F67AFCD004747A9 /* loudness.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE002F67AFCD004747A9 /* loudness.c */; };
 		4DACAE6B2F67AFCD004747A9 /* sndmast.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE2B2F67AFCD004747A9 /* sndmast.c */; };
 		4DACAE6C2F67AFCD004747A9 /* keyboard.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADFC2F67AFCD004747A9 /* keyboard.c */; };
-		4DBCAE002F67AFCD004747A9 /* gamepad.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCADD12F67AFCD004747A9 /* gamepad.c */; };
 		4DACAE6D2F67AFCD004747A9 /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE102F67AFCD004747A9 /* network.c */; };
 		4DACAE6E2F67AFCD004747A9 /* editship.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACADEA2F67AFCD004747A9 /* editship.c */; };
 		4DACAE6F2F67AFCD004747A9 /* mouse.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAE0A2F67AFCD004747A9 /* mouse.c */; };
@@ -63,6 +63,8 @@
 		4DACAF032F68C000004747A9 /* SDLnetUDP.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAF072F68C000004747A9 /* SDLnetUDP.c */; };
 		4DACAF042F68C000004747A9 /* SDLnetselect.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DACAF082F68C000004747A9 /* SDLnetselect.c */; };
 		4DB8E9752F70744E00AAF9B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8E9742F70744E00AAF9B5 /* Assets.xcassets */; };
+		4DBCAE002F67AFCD004747A9 /* gamepad.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCADD12F67AFCD004747A9 /* gamepad.c */; };
+		BB01A0032F68AFCD004747A9 /* GamepadIAP.m in Sources */ = {isa = PBXBuildFile; fileRef = BB01A0022F68AFCD004747A9 /* GamepadIAP.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D4B42B32F760F9F002B90A3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4D6E3C682F779C3B004D98A2 /* GamepadUnlock.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = GamepadUnlock.storekit; sourceTree = "<group>"; };
 		4D6EED882EB9452400862BF3 /* OpenTyrian2000-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenTyrian2000-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../SDL/SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = SOURCE_ROOT; };
 		4DACADDD2F67AFCD004747A9 /* animlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = animlib.h; sourceTree = "<group>"; };
@@ -128,8 +132,6 @@
 		4DACADF82F67AFCD004747A9 /* joystick.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = joystick.c; sourceTree = "<group>"; };
 		4DACADF92F67AFCD004747A9 /* jukebox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jukebox.h; sourceTree = "<group>"; };
 		4DACADFA2F67AFCD004747A9 /* jukebox.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = jukebox.c; sourceTree = "<group>"; };
-		4DBCADD02F67AFCD004747A9 /* gamepad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gamepad.h; sourceTree = "<group>"; };
-		4DBCADD12F67AFCD004747A9 /* gamepad.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gamepad.c; sourceTree = "<group>"; };
 		4DACADFB2F67AFCD004747A9 /* keyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keyboard.h; sourceTree = "<group>"; };
 		4DACADFC2F67AFCD004747A9 /* keyboard.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = keyboard.c; sourceTree = "<group>"; };
 		4DACADFD2F67AFCD004747A9 /* lds_play.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lds_play.h; sourceTree = "<group>"; };
@@ -203,6 +205,10 @@
 		4DACAF072F68C000004747A9 /* SDLnetUDP.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = SDLnetUDP.c; path = ../SDL/SDL_net/SDLnetUDP.c; sourceTree = SOURCE_ROOT; };
 		4DACAF082F68C000004747A9 /* SDLnetselect.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = SDLnetselect.c; path = ../SDL/SDL_net/SDLnetselect.c; sourceTree = SOURCE_ROOT; };
 		4DB8E9742F70744E00AAF9B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4DBCADD02F67AFCD004747A9 /* gamepad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gamepad.h; sourceTree = "<group>"; };
+		4DBCADD12F67AFCD004747A9 /* gamepad.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gamepad.c; sourceTree = "<group>"; };
+		BB01A0012F68AFCD004747A9 /* GamepadIAP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamepadIAP.h; sourceTree = "<group>"; };
+		BB01A0022F68AFCD004747A9 /* GamepadIAP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamepadIAP.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DACAEB42F67C000004747A9 /* libSDL2.a in Frameworks */,
+				4D4B42B42F760F9F002B90A3 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +238,7 @@
 		4D6EED7F2EB9452400862BF3 = {
 			isa = PBXGroup;
 			children = (
+				4D6E3C682F779C3B004D98A2 /* GamepadUnlock.storekit */,
 				4DB8E9742F70744E00AAF9B5 /* Assets.xcassets */,
 				4D6EEDA62EB9471500862BF3 /* SDL.xcodeproj */,
 				4D6EEDDA2EB9492D00862BF3 /* Frameworks */,
@@ -251,6 +259,7 @@
 		4D6EEDDA2EB9492D00862BF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D4B42B32F760F9F002B90A3 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -290,6 +299,8 @@
 				4DACADFA2F67AFCD004747A9 /* jukebox.c */,
 				4DBCADD02F67AFCD004747A9 /* gamepad.h */,
 				4DBCADD12F67AFCD004747A9 /* gamepad.c */,
+				BB01A0012F68AFCD004747A9 /* GamepadIAP.h */,
+				BB01A0022F68AFCD004747A9 /* GamepadIAP.m */,
 				4DACADFB2F67AFCD004747A9 /* keyboard.h */,
 				4DACADFC2F67AFCD004747A9 /* keyboard.c */,
 				4DACADFD2F67AFCD004747A9 /* lds_play.h */,
@@ -510,6 +521,7 @@
 				4DACAE6F2F67AFCD004747A9 /* mouse.c in Sources */,
 				4DACAE702F67AFCD004747A9 /* pcxload.c in Sources */,
 				4DBCAE002F67AFCD004747A9 /* gamepad.c in Sources */,
+				BB01A0032F68AFCD004747A9 /* GamepadIAP.m in Sources */,
 				4DACAF012F68C000004747A9 /* SDLnet.c in Sources */,
 				4DACAF022F68C000004747A9 /* SDLnetTCP.c in Sources */,
 				4DACAF032F68C000004747A9 /* SDLnetUDP.c in Sources */,
@@ -701,6 +713,8 @@
 					CoreGraphics,
 					"-framework",
 					OpenGLES,
+					"-framework",
+					StoreKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tudoraneau.OpenTyrian2000-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -769,6 +783,8 @@
 					CoreGraphics,
 					"-framework",
 					OpenGLES,
+					"-framework",
+					StoreKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tudoraneau.OpenTyrian2000-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";

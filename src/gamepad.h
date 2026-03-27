@@ -33,6 +33,13 @@ void init_gamecontrollers(void);
 /* Returns true if at least one Bluetooth/MFi controller is currently open. */
 bool gamepad_is_connected(void);
 
+/* Returns true only when a controller is connected AND the gamepad IAP has
+ * been purchased / restored.  Use this to decide whether on-screen controls
+ * should be hidden; gamepad_is_connected() alone is insufficient because the
+ * controller may be present but suppressed while the IAP dialog is showing or
+ * after the user declined the purchase. */
+bool gamepad_is_active(void);
+
 /* Poll all open controllers and push their state into keysactive[].
  * Called from service_SDL_events() every frame. */
 void poll_gamecontrollers(void);

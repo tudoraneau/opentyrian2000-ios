@@ -24,3 +24,6 @@ hdt_*
 opentyrian.cfg
 tyrian.cfg
 tyrian.sav
+
+# StoreKit
+Xcode/*.storekit
