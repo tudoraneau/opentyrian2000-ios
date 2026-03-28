@@ -674,7 +674,7 @@
 					"\"$(SRCROOT)/../SDL/SDL_net/include\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "OpenTyrian2000-iOS";
+				INFOPLIST_KEY_CFBundleDisplayName = "OpenTyrian Engine Unofficial";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -744,7 +744,7 @@
 					"\"$(SRCROOT)/../SDL/SDL_net/include\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "OpenTyrian2000-iOS";
+				INFOPLIST_KEY_CFBundleDisplayName = "OpenTyrian Engine Unofficial";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
