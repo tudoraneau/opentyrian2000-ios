@@ -799,7 +799,7 @@ int main(int argc, char *argv[])
 					SDL_MESSAGEBOX_ERROR,
 					"Data Files Missing",
 					"Please place your legally obtained Tyrian 2000 data files in:\n\n"
-					"Files app > On My iPhone > OpenTyrian2000-iOS > Tyrian20\n\n"
+					"Files app > On My iPhone > OpenTyrian Engine Unofficial > Tyrian20\n\n"
 					"The app will now exit.",
 					NULL);
 				SDL_Quit();

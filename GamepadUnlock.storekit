@@ -1,0 +1,33 @@
+{
+  "identifier" : "E4A5B2C1-1234-4567-89AB-CDEF01234567",
+  "nonConsumableProducts" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "A1B2C3D4-0001-0001-0001-000000000001",
+      "localizations" : [
+        {
+          "description" : "Unlock support for any Bluetooth gamepad (MFi, PS4, PS5, Xbox).",
+          "displayName" : "Gamepad Support",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "tudoraneau.OpenTyrian2000_iOS.gamepad_unlock",
+      "referenceName" : "Gamepad Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "00000000",
+    "_developerTeamID" : "A53FZ7627B",
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitVersion" : 1
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
