@@ -57,7 +57,7 @@ const char *data_dir(void)
 		return dir;
 
 #ifdef __IPHONEOS__
-        // On iOS, read game data from Documents/Tyrian20 so that users
+        // On iOS, read game data from Documents so that users
         // can manage the files via the Files app without bundling them.
         static char ios_documents_path[1024] = "";
 
@@ -65,7 +65,7 @@ const char *data_dir(void)
         if (home)
         {
                 snprintf(ios_documents_path, sizeof(ios_documents_path),
-                         "%s/Documents/Tyrian20", home);
+                         "%s/Documents", home);
         }
 
         const char *const ios_dirs[] = {

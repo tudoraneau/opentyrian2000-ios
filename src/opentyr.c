@@ -62,6 +62,7 @@
 #include <sys/stat.h>
 #endif
 
+
 const char *opentyrian_str = "OpenTyrian2000";
 const char *opentyrian_version = OPENTYRIAN_VERSION;
 
@@ -786,10 +787,26 @@ int main(int argc, char *argv[])
 		if (home)
 		{
 			char docs_path[1024];
-			snprintf(docs_path, sizeof(docs_path), "%s/Documents/Tyrian20", home);
+			snprintf(docs_path, sizeof(docs_path), "%s/Documents", home);
 
-			// Create the directory so Files app shows the folder
+			// Ensure the Documents directory exists (no-op if already present).
+			// iOS creates it at install time when UIFileSharingEnabled is set,
+			// but this guards against edge cases.
 			mkdir(docs_path, 0755);
+
+			// Write a README so the folder is visible in the Files app even
+			// before game data is added. The Files app hides empty app folders.
+			char readme_path[1024];
+			snprintf(readme_path, sizeof(readme_path), "%s/README.txt", docs_path);
+			FILE *readme = fopen(readme_path, "wx"); // "x" = fail if exists
+			if (readme)
+			{
+				fprintf(readme,
+				    "OpenTyrian Engine Unofficial\n"
+				    "============================\n\n"
+				    "Place your legally obtained Tyrian 2000 data files in this folder.\n\n");
+				fclose(readme);
+			}
 
 			// Check if data files are present
 			FILE *test = dir_fopen(docs_path, "tyrian1.lvl", "rb");
@@ -799,7 +816,14 @@ int main(int argc, char *argv[])
 					SDL_MESSAGEBOX_ERROR,
 					"Data Files Missing",
 					"Please place your legally obtained Tyrian 2000 data files in:\n\n"
-					"Files app > On My iPhone > OpenTyrian Engine Unofficial > Tyrian20\n\n"
+					"Files app > On My iPhone > OpenTyrian Engine Unofficial\n\n"
+					"Instructions\n"
+					"------------\n"
+					"1. Connect your iPhone to a computer\n"
+					"2. Open the Finder app (macOS) or iTunes (Windows)\n"
+					"3. Select your device and navigate to the Files section\n"
+					"4. Copy your legally obtained Tyrian 2000 data files into the OpenTyrian Engine Unofficial folder\n"
+					"5. Relaunch the game\n\n"
 					"The app will now exit.",
 					NULL);
 				SDL_Quit();
@@ -836,7 +860,7 @@ int main(int argc, char *argv[])
 						"The data files found are not Tyrian 2000 format.\n\n"
 						"This app requires the Tyrian 2000 data files.\n"
 						"Please replace them with the correct files in:\n\n"
-						"Files app > On My iPhone > OpenTyrian2000-iOS > Tyrian20\n\n"
+					"Files app > On My iPhone > OpenTyrian Engine Unofficial\n\n"
 						"The app will now exit.",
 						NULL);
 					SDL_Quit();
